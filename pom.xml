@@ -4,6 +4,7 @@
     <artifactId>jollyday</artifactId>
     <name>Jollyday</name>
     <version>0.5.2-SNAPSHOT</version>
+    <packaging>bundle</packaging>
     <description>
         This API determines the holidays for a given year, country/name and eventually state/region. The holiday data is
         stored in XML files (one for each country) and will be read from the classpath. You can provide your own holiday
@@ -90,6 +91,12 @@
     <build>
         <pluginManagement>
             <plugins>
+    	        <plugin>
+		    <groupId>org.apache.felix</groupId>
+		    <artifactId>maven-bundle-plugin</artifactId>
+		    <extensions>true</extensions>
+	            <version>3.0.1</version>
+		</plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>jaxb2-maven-plugin</artifactId>
@@ -148,6 +155,10 @@
             </plugins>
         </pluginManagement>
         <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>

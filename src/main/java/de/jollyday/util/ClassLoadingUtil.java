@@ -17,6 +17,8 @@ package de.jollyday.util;
 
 import java.util.logging.Logger;
 
+import de.jollyday.HolidayManager;
+
 /**
  * <p>
  * ClassLoadingUtil class.
@@ -57,6 +59,6 @@ public class ClassLoadingUtil {
 	 * @return the current threads context classloader
 	 */
 	public ClassLoader getClassloader() {
-		return Thread.currentThread().getContextClassLoader();
+		return HolidayManager.class.getClassLoader();
 	}
 }
